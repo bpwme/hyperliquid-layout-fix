@@ -1,0 +1,148 @@
+:root {
+  --hl-coin-selector-height: min(75vh, 1000px);
+}
+
+[data-coin-selector-dropdown="true"] > div > div {
+  height: var(--hl-coin-selector-height) !important;
+  min-height: 0 !important;
+}
+
+[data-coin-selector-dropdown="true"] > div > div > div {
+  height: 100% !important;
+  min-height: 0 !important;
+}
+
+[data-coin-selector-dropdown="true"]
+  > div
+  > div
+  > div
+  > div:nth-child(3) {
+  height: 100% !important;
+  min-height: 0 !important;
+}
+
+[data-coin-selector-dropdown="true"]
+  > div
+  > div
+  > div
+  > div:nth-child(3)
+  > div:first-child {
+  height: 100% !important;
+  min-height: 0 !important;
+}
+
+[data-coin-selector-dropdown="true"] .scrollers {
+  height: 100% !important;
+  max-height: none !important;
+}
+/* -------------------------------------------------------------------------- */
+/* Favorites / watchlist                                                      */
+/* -------------------------------------------------------------------------- */
+
+#favoriteCoins {
+  align-items: stretch !important;
+}
+
+
+/* Main content wrapper */
+#favoriteCoins > div:has([data-testid="favorite-bar-scroll"]) {
+  width: 100%;
+  height: 100%;
+
+  box-sizing: border-box;
+  padding: 8px 12px !important;
+}
+
+
+/* Convert header + favorites into two rows */
+#favoriteCoins
+  > div:has([data-testid="favorite-bar-scroll"])
+  > div {
+  height: 100%;
+  min-height: 0;
+
+  grid-template-columns: auto 1fr !important;
+  grid-template-rows: auto minmax(0, 1fr) !important;
+
+  align-items: center !important;
+}
+
+
+/* Star */
+#favoriteCoins
+  > div:has([data-testid="favorite-bar-scroll"])
+  > div
+  > svg:first-child {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+
+/* $ / % toggle */
+#favoriteCoins
+  > div:has([data-testid="favorite-bar-scroll"])
+  > div
+  > div:nth-child(2) {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+
+/* Wrapper around list */
+#favoriteCoins
+  > div:has([data-testid="favorite-bar-scroll"])
+  > div
+  > div:nth-child(3) {
+  grid-column: 1 / -1;
+  grid-row: 2;
+
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+}
+
+
+/* Horizontal carousel -> vertical watchlist */
+#favoriteCoins [data-testid="favorite-bar-scroll"] {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
+
+  width: 100% !important;
+  height: 100% !important;
+
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+
+  scrollbar-width: thin !important;
+}
+
+
+/* Individual ticker */
+#favoriteCoins [data-testid="favorite-bar-scroll"] > div {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) auto !important;
+
+  align-items: center !important;
+  gap: 12px !important;
+
+  width: 100% !important;
+  flex: 0 0 auto !important;
+
+  box-sizing: border-box;
+  padding: 6px 4px;
+}
+
+
+#favoriteCoins
+  [data-testid="favorite-bar-scroll"]
+  > div
+  > :last-child {
+  text-align: right;
+}
+
+
+/* Horizontal-scroll button no longer needed */
+#favoriteCoins button[aria-label="Scroll right"] {
+  display: none !important;
+}
