@@ -1,4 +1,4 @@
-Lighweight Chrome extension for a better Hyperliquid layout
+Lightweight Chrome extension for a better Hyperliquid layout
 
 ## Installation
 
